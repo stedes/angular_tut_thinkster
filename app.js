@@ -18,12 +18,16 @@ function($stateProvider, $urlRouterProvider) {
       url: '/home',
       templateUrl: '/home.html',
       controller: 'MainCtrl'
+    })
+
+    .state('posts', {
+      url: '/posts/{id}',
+      templateUrl: '/posts.html',
+      controller: 'PostsCtrl'
     });
 
   $urlRouterProvider.otherwise('home');
 }]);
-
-
 
 app.controller('MainCtrl', [
 '$scope',
@@ -32,25 +36,36 @@ function($scope, posts){
 
   $scope.posts = posts.posts;
 
-  $scope.posts=[
+/*  $scope.posts=[
     {title:"post1", upvotes:3},
     {title:"post2", upvotes:5}
-  ]
-
+  ]*/
 
   $scope.addPost = function(){
     if(!$scope.title || $scope.title === '') { return; }
     $scope.posts.push({
       title   : $scope.title,
       link    : $scope.link,
-      upvotes : 0});
+      upvotes : 0,
+      comments: [
+      {author:'John', body:'A good post', upvotes:1},
+      {author:'Steven', body:'Learning angular', upvotes:2}
+      ]
+    });
     $scope.title = '';
   };
 
   $scope.incrementUpvotes = function(post){
     post.upvotes += 1;
   }
+}]);
 
-
+app.controller('PostsCtrl', [
+'$scope',
+'$stateParams',
+'posts',
+function($scope, $stateParams, posts){
+  //console.log('successfully in controller');
+  $scope.post = posts.posts[$stateParams.id];
 
 }]);
