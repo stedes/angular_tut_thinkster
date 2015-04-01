@@ -10,3 +10,5 @@ http://blog.risingstack.com/from-angularjs-to-react-the-isomorphic-way/
 http://facebook.github.io/react/docs/thinking-in-react.html
 
 https://www.andrewmunsell.com/blog/introduction-to-realtime-web-meteor-and-nodejs
+
+http://www.manuel-schoebel.com/blog/meteorjs-the-perfect-match-for-lean-startups
