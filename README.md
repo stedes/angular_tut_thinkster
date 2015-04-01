@@ -8,3 +8,5 @@ https://medium.com/este-js-framework/what-i-would-recommend-instead-of-angular-j
 http://blog.risingstack.com/from-angularjs-to-react-the-isomorphic-way/
 
 http://facebook.github.io/react/docs/thinking-in-react.html
+
+https://www.andrewmunsell.com/blog/introduction-to-realtime-web-meteor-and-nodejs
