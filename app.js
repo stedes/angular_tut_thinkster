@@ -36,11 +36,6 @@ function($scope, posts){
 
   $scope.posts = posts.posts;
 
-/*  $scope.posts=[
-    {title:"post1", upvotes:3},
-    {title:"post2", upvotes:5}
-  ]*/
-
   $scope.addPost = function(){
     if(!$scope.title || $scope.title === '') { return; }
     $scope.posts.push({
@@ -57,7 +52,19 @@ function($scope, posts){
 
   $scope.incrementUpvotes = function(post){
     post.upvotes += 1;
-  }
+  };
+
+  $scope.insertTestData = function(){
+    $scope.posts.push({
+      title: 'test_post1',
+      link: 'http://www.google.be',
+      upvotes: 2,
+      comments: [
+      {author:'Commenter', body:'Nice post', upvotes:5}
+      ]
+    });
+  };
+
 }]);
 
 app.controller('PostsCtrl', [
